@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package struct;
+
+option java_package = "com.nut5.struct";
+option java_outer_classname = "Wallpaper";
+
+message WallpaperList {
+  repeated WallpaperView wallpapers = 1;
+  int32 last_id = 2;
+  string host = 3;
+
+  message WallpaperView {
+    repeated Pic pics = 1;
+    bool lock = 2;
+    int32 wallpaperViewId = 3;
+  }
+
+  message Pic {
+    string type = 1;
+    string url = 2;
+    int32 width = 3;
+    int32 height = 4;
+  }
+}

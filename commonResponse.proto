@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package common;
+
+option java_package = "com.nut5.common";
+option java_outer_classname = "ProtoBufResponse";
+
+import "google/protobuf/any.proto";
+
+message CommonResponse {
+    int32 code = 1;
+    string msg = 2;
+    google.protobuf.Any info = 3;
+}
